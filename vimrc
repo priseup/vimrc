@@ -16,21 +16,21 @@ Plugin 'VundleVim/Vundle.vim'
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
 "Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-surround' "not work
-Plugin 'tpope/vim-repeat'
+"Plugin 'tpope/vim-surround' "not work
+"Plugin 'tpope/vim-repeat'
 Plugin 'mbbill/fencview'
-Plugin 'easymotion/vim-easymotion'
+"Plugin 'easymotion/vim-easymotion'
 Plugin 'kien/ctrlp.vim'
 "Plugin 'kien/rainbow_parentheses.vim' colors so mess with parenthese
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'Lokaltorg/vim-powerline'
+"Plugin 'flazz/vim-colorschemes'
+"Plugin 'Lokaltorg/vim-powerline'
 Plugin 'majutsushi/tagbar'
 Plugin 'sukima/xmledit'
 "Plugin 'sjl/gundo.vim' no need
-Plugin 'jiangmiao/auto-pairs'
+"Plugin 'jiangmiao/auto-pairs'  "bugs exist
 Plugin 'Shougo/neocomplcache'
 Plugin 'msanders/snipmate.vim'
 Plugin 'elzr/vim-json'
@@ -47,20 +47,20 @@ Plugin 'ack.vim'
 Plugin 'L9'
 Plugin 'a.vim'
 Plugin 'CSApprox'
-Plugin 'OmniCppComplete'
-Plugin 'Markdown' "very very slow when open markdown file
+"Plugin 'OmniCppComplete'
+"Plugin 'Markdown' "very very slow when open markdown file
 Plugin 'Markdown-syntax'
 "Plugin 'taglist.vim'  the similar plugin tagbar.vim
 Plugin 'xml.vim'
-Plugin 'matchit.zip'
+"Plugin 'matchit.zip'
 Plugin 'css_color.vim'
-Plugin 'YankRing.vim'
+"Plugin 'YankRing.vim'
 Plugin 'vim-cpp-enhanced-highlight'
 Plugin 'cpp.vim'
 Plugin 'taglist.vim'
-Plugin 'calendar.vim'
-Plugin 'DirDiff.vim'
-Plugin 'slimv.vim'
+"Plugin 'calendar.vim'
+"Plugin 'DirDiff.vim'
+"Plugin 'slimv.vim'
 
 " Git plugin not hosted on GitHub
 "Plugin 'git://git.wincent.com/command-t.git'
@@ -118,7 +118,7 @@ set tabstop=4
 set shiftwidth=4
 set laststatus=1
 set history=1000
-set tags+=../tags,~/.qt5
+set tags+=../tags ",~/.qt5
 set backspace=indent,eol,start
 
 set nobackup
@@ -130,8 +130,8 @@ set noswapfile
 " when vim is in GUI evironment, such as gvim
 if has('gui_running')
     "set guifont=YaHei\ Consolas\ Hybrid:h12
-    set guioptions-=M
-    set guioptions-=T
+    set guioptions+=m   " menubar
+    set guioptions-=T   " toolbar
     "color molokai
 endif
 
@@ -201,24 +201,33 @@ let g:cpp_experimental_template_highlight = 1
 let g:snips_author = 'pp'
 
 " yankring
-let g:yankring_enabled = 0  "disable the yanking, <c-p> conflicts with ctrlp.vim
+"let g:yankring_enabled = 0  "disable the yanking, <c-p> conflicts with ctrlp.vim
 
 " ctrlp.vim
 let g:ctrlp_map='<c-p>'
 let g:ctrlp_cmd='CtrlP'
 
 " OmniCppComplete
-"set completeopt=menu,menuone " 关掉智能补全时的预览窗口
-let OmniCpp_MayCompleteDot = 1 " autocomplete with .
-let OmniCpp_MayCompleteArrow = 1 " autocomplete with ->
-let OmniCpp_MayCompleteScope = 1 " autocomplete with ::
-let OmniCpp_SelectFirstItem = 2 " select first item (but don't insert)
-let OmniCpp_NamespaceSearch = 2 " search namespaces in this and included files
-let OmniCpp_ShowPrototypeInAbbr = 1 " show function prototype in popup window
-let OmniCpp_GlobalScopeSearch=1 " enable the global scope search
-let OmniCpp_DisplayMode=1 " Class scope completion mode: always show all members
+"set completeopt=menu,menuone " close the preview window when complete tips
+"let OmniCpp_MayCompleteDot = 1 " autocomplete with .
+"let OmniCpp_MayCompleteArrow = 1 " autocomplete with ->
+"let OmniCpp_MayCompleteScope = 1 " autocomplete with ::
+"let OmniCpp_SelectFirstItem = 2 " select first item (but don't insert)
+"let OmniCpp_NamespaceSearch = 2 " search namespaces in this and included files
+"let OmniCpp_ShowPrototypeInAbbr = 1 " show function prototype in popup window
+"let OmniCpp_GlobalScopeSearch=1 " enable the global scope search
+"let OmniCpp_DisplayMode=1 " Class scope completion mode: always show all members
+"let OmniCpp_ShowScopeInAbbr=1 " show scope in abbreviation and remove the last column
+"let OmniCpp_ShowAccess=1
 "let OmniCpp_DefaultNamespaces=["std"]
-let OmniCpp_ShowScopeInAbbr=1 " show scope in abbreviation and remove the last column
-let OmniCpp_ShowAccess=1
+
+" vim-easymotion
+"let g:EasyMotion_smartcase = 1
+""let g:EasyMotion_startofline = 0
+"map <Leader><leader>h <Plug>(easymotion-linebackward)
+"map <Leader><Leader>j <Plug>(easymotion-j)
+"map <Leader><Leader>k <Plug>(easymotion-k)
+"map <Leader><leader>l <Plug>(easymotion-lineforward)
+"map <Leader><leader>. <Plug>(easymotion-repeat)
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~plugin option end~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~plugin option end~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
