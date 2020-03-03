@@ -10,6 +10,8 @@ syntax on
 set background=dark
 color evening
 
+set cc=80
+
 set ruler
 set number
 set relativenumber
